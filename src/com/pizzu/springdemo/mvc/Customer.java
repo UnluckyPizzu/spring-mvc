@@ -7,6 +7,8 @@ import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 
+import com.pizzu.springdemo.mvc.validation.CourseCode;
+
 public class Customer {
 
 	private String firstName;
@@ -14,6 +16,9 @@ public class Customer {
 	@NotNull(message = "is required")
 	@Size(min = 1, message = "is required")
 	private String lastName;
+	
+	@CourseCode
+	private String courseCode;
 
 	public Customer() {
 
@@ -36,6 +41,14 @@ public class Customer {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
 	}
 	
 	
